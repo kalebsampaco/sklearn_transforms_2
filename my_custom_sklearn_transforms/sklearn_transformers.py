@@ -41,15 +41,15 @@ def norm(df):
     
 def transform_df(df):
     from sklearn.impute import SimpleImputer
-    # Crear un objeto simpleimputer para llenar con ceros
+    # Crear un objeto si para llenar con ceros
     si_cero = SimpleImputer(
-        missing_values=np.nan,  # los valores que faltan son del tipo nan (Pandas estándar)
+        missing_values=np.nan,  # los valores que faltan son del tipo nan (Pandas estandar)
         strategy='constant',  # la estrategia elegida es cambiar el valor faltante por una constante
         fill_value=0,  # la constante que se usará para completar los valores faltantes es un int64 = 0
         verbose=0,
         copy=True
     )
-    # Crear un objeto ``SimpleImputer`` para llenar con el promedio
+    # Crear un objeto si para llenar con el promedio
     si_mean = SimpleImputer(strategy='most_frequent', copy=True)
     
     # Llenado los nan por ceros en la sección indicada
